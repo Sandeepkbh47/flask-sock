@@ -24,10 +24,11 @@ def test():
 
 def event_stream():
     count=1
-    while True:
+    # while True:
+    for i in range(20):
         yield 'data: %s\n\n' % {"count":count}
         count+=1
-        time.sleep(1)
+        time.sleep(0.3)
 
 @app.route("/events")
 def events():
